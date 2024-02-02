@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Maple Showcase</title>
+		<link rel="stylesheet" href="maple-reset.css">
+		<link rel="stylesheet" href="maple-typography.css">
+		<link rel="stylesheet" href="maple-buttons.css">
+		<link rel="stylesheet" href="maple-switch.css">
+		<!-- Include other Maple CSS files as needed -->
+		<style>
+			/* Additional custom styles can go here */
+			body {
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+			h1 {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Maple CSS Framework Showcase</h1>
+		
+		<h2>Buttons</h2>
+		<button class="maple-btn">Default Button</button>
+		<button class="maple-btn maple-btn-primary">Primary Button</button>
+		<button class="maple-btn maple-btn-secondary">Secondary Button</button>
+		<button class="maple-btn maple-btn-danger">Danger Button</button>
+
+		<h2>Button Sizes</h2>
+		<button class="maple-btn maple-btn-small">Small Button</button>
+		<button class="maple-btn">Normal Button</button>
+		<button class="maple-btn maple-btn-large">Large Button</button>
+
+		<h2>Switch</h2>
+		<label id="draggable-switch" class="maple-switch">
+			<input type="checkbox" class="maple-slider">
+			<span id="draggable-thumb" class="maple-slider"></span>
+		</label>
+
+		<!-- You can add more elements to showcase here -->
+
+		<script>
+			// Make the switch thumb draggable
+			let thumbEl = document.getElementById('draggable-thumb');
+			let isDragging = false;
+			let startX, offsetX;
+
+			thumbEl.addEventListener('mousedown', (e) => {
+				isDragging = true;
+				startX = e.clientX;
+				offsetX = thumbEl.offsetLeft;
+			});
+
+			document.addEventListener('mouseup', () => {
+				isDragging = false;
+			});
+
+			document.addEventListener('mousemove', (e) => {
+				if (isDragging) {
+					let newLeft = offsetX + e.clientX - startX;
+					if (newLeft >= 0 && newLeft <= thumbEl.parentElement.offsetWidth - thumbEl.offsetWidth) {
+						thumbEl.style.left = newLeft + 'px';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

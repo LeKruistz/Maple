@@ -1,0 +1,83 @@
+/* maple-typography.css */
+
+/* Typography styles */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+/* maple-switch.css */
+
+/* Switch Container */
+.maple-switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Slider */
+.maple-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 34px;
+}
+
+/* Rounded sliders */
+.maple-slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+/* Checked state */
+.maple-slider:checked+.maple-slider {
+	background-color: #2196F3;
+}
+
+/* Rounded slider when checked */
+.maple-slider:checked+.maple-slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Additional styles for draggable thumb */
+.maple-slider {
+	user-select: none;
+}
+
+.maple-slider:before {
+	cursor: grab;
+}

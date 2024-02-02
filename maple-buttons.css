@@ -1,0 +1,62 @@
+/* maple-buttons.css */
+
+/* Default Button */
+.maple-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 8px; /* Softened corners */
+    opacity: 1;
+    padding: 7.2px 10.8px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #EEEEEE;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.maple-btn:hover {
+    background-color: #DDDDDD;
+}
+
+/* Primary Button */
+.maple-btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.maple-btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary Button */
+.maple-btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.maple-btn-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Danger Button */
+.maple-btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.maple-btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Button Sizes */
+.maple-btn-small {
+    padding: 5px 10px;
+    border-radius: 50px; /* Fully rounded corners for small button */
+}
+
+.maple-btn-large {
+    padding: 15px 30px;
+}
