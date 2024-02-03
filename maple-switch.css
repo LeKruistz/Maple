@@ -1,27 +1,61 @@
 /* maple-switch.css */
 
-/* Thumb size and style */
+/* Switch Container */
+.maple-switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 34px;
+}
+
+/* Slider */
 .maple-slider {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Rounded sliders */
+.maple-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.26s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.26s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Adjusted transition with cubic-bezier timing function */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Checked state */
+.maple-slider:checked + .maple-slider {
+    background-color: #2196F3;
+}
+
+/* Rounded slider when checked */
+.maple-slider:checked + .maple-slider:before {
+    transform: translateX(20px);
+}
+
+/* Additional styles for draggable thumb */
+.maple-slider {
+    user-select: none;
 }
 
 .maple-slider:before {
-  content: "";
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s; /* Add transition for smoother animation */
+    cursor: grab;
 }
 
 /* Thumb shrink effect when sliding */
-.maple-slider:checked:before {
-  transform: scale(0.9); /* Scale down the thumb when checked */
+.maple-slider:before {
+    transform: scale(0.9); /* Initially set to 90% size */
+    transition: transform 0.26s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.26s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Add transition for smoother animation */
 }

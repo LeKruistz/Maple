@@ -35,37 +35,13 @@
 		<button class="maple-btn maple-btn-large">Large Button</button>
 
 		<h2>Switch</h2>
-		<label id="draggable-switch" class="maple-switch">
-			<input type="checkbox" class="maple-slider">
-			<span id="draggable-thumb" class="maple-slider"></span>
-		</label>
+			<label class="maple-switch">
+				<input type="checkbox" class="maple-slider">
+				<span class="maple-slider"></span>
+			</label>
 
 		<!-- You can add more elements to showcase here -->
 
-		<script>
-			// Make the switch thumb draggable
-			let thumbEl = document.getElementById('draggable-thumb');
-			let isDragging = false;
-			let startX, offsetX;
-
-			thumbEl.addEventListener('mousedown', (e) => {
-				isDragging = true;
-				startX = e.clientX;
-				offsetX = thumbEl.offsetLeft;
-			});
-
-			document.addEventListener('mouseup', () => {
-				isDragging = false;
-			});
-
-			document.addEventListener('mousemove', (e) => {
-				if (isDragging) {
-					let newLeft = offsetX + e.clientX - startX;
-					if (newLeft >= 0 && newLeft <= thumbEl.parentElement.offsetWidth - thumbEl.offsetWidth) {
-						thumbEl.style.left = newLeft + 'px';
-					}
-				}
-			});
-		</script>
+		<script src="drag.js"></script>
 	</body>
 </html>
